@@ -1,7 +1,6 @@
 """
 This script trains a logistic regression model on the Diabetes dataset.
 """
-import os
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
@@ -12,20 +11,23 @@ import mlflow.sklearn
 import joblib
 import optuna
 
+
 def preprocess_data():
     """
     Load and preprocess the Diabetes dataset.
     Returns Preprocessed training and test data.
     """
-    file_path = os.path.join(os.path.dirname(__file__),'..','data', 'diabetes.csv')
+    file_path = os.path.join(os.path.dirname(__file__), '..', 'data', 'diabetes.csv')
     data = pd.read_csv(os.path.abspath(file_path))
     x = data.drop('Outcome', axis=1)
     y = data['Outcome']
-    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=42)
+    x_train, x_test, y_train, y_test = \
+        train_test_split(x, y, test_size=0.2, random_state=42)
     scaler = StandardScaler()
     x_train = scaler.fit_transform(x_train)
     x_test = scaler.transform(x_test)
     return x_train, x_test, y_train, y_test
+
 
 def objective(trial):
     """
@@ -57,6 +59,7 @@ def objective(trial):
 
     return accuracy
 
+
 def train_model_with_optuna():
     """
     Trains the model with Optuna hyperparameter tuning.
@@ -78,6 +81,7 @@ def train_model_with_optuna():
     best_model = LogisticRegression(**study.best_trial.params)
     best_model.fit(x_train, y_train)
     joblib.dump(best_model, "best_model.joblib")
-    
+
+
 if __name__ == "__main__":
     train_model_with_optuna()

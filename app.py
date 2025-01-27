@@ -6,25 +6,25 @@ import warnings
 import pandas as pd
 from flask import Flask, request, jsonify
 import joblib
-
 # Suppress warnings and configure logging
 # Suppress sklearn deprecation warnings
 warnings.filterwarnings("ignore", message=".*_IS_DEPRECATED_PICKLE.*")
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 
+
 # Initialize Flask application
 app = Flask(__name__)
-
 # Load the trained model
 try:
     model = joblib.load("modelfinal_best.joblib")
     logging.info("Model successfully loaded.")
 except FileNotFoundError:
-    logging.error("Model file not found. Please ensure the model file is in the specified path.")
+    logging.error("Model file not found")
     raise
 except joblib.externals.loky.process_executor.TerminatedWorkerError as e:
-    logging.error("Error loading model: %s",e)
+    logging.error("Error loading model: %s", e)
     raise
+
 
 @app.route('/test', methods=['GET'])
 def diabetes_test():
@@ -32,6 +32,7 @@ def diabetes_test():
     Endpoint to predict diabetes based on user input.
     """
     return "123"
+
 
 @app.route('/diabetes_prediction', methods=['POST'])
 def diabetes_prediction():
@@ -91,6 +92,7 @@ def diabetes_prediction():
         logging.error("Unexpected error: %s",e)
         raise
         #return jsonify({"error": "An unexpected error occurred."}), 500
+
 
 if __name__ == "__main__":
     try:
