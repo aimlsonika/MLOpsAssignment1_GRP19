@@ -53,7 +53,10 @@ jobs:
 
       - name: Set PYTHONPATH
         run: echo "PYTHONPATH=$PWD" >> $GITHUB_ENV
-
+        
+      - name: Start MLflow server
+        run: |
+          nohup mlflow server --backend-store-uri sqlite:///mlflow.db --default-artifact-root ./mlruns --host 0.0.0.0 --port 8000 &
       - name: Run Tests
         run: pytest src/test_model.py
 
