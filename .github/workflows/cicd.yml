@@ -52,7 +52,7 @@ jobs:
 
       - name: Pull data with DVC
         run: |
-          dvc pull data/diabetes.csv  # Fetch the data          
+          dvc pull data/diabetes.csv  # Fetch the data from remote         
 
       - name: Run Tests
         run: pytest src/test_model.py
