@@ -47,9 +47,9 @@ jobs:
         run: |
           python -m pip install dvc
 
-      - name: Pull data with DVC
-        run: |
-          dvc pull data/diabetes.csv  # Fetch the data from remote mc  
+     # - name: Pull data with DVC
+     #   run: |
+     #     dvc pull data/diabetes.csv  # Fetch the data from remote mc  
 
       - name: Set PYTHONPATH
         run: echo "PYTHONPATH=$PWD" >> $GITHUB_ENV
