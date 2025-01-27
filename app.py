@@ -95,3 +95,4 @@ if __name__ == "__main__":
     except Exception as e:
         logging.error("Failed to start Flask app: %s", e)
         raise
+    

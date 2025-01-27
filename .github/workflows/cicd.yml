@@ -26,7 +26,7 @@ jobs:
         run: flake8 src/ app.py --max-line-length=100
 
   test:
-    name: Test Model
+    name: Test the Model
     runs-on: windows-latest
     steps:
       - name: Checkout Code
