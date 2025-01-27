@@ -61,7 +61,7 @@ jobs:
         run: pytest src/test_model.py
 
   build-and-deploy:
-    name: Build and Deploy Flask App
+    name: Build and Deploy Flask App Diabetes-predict
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
