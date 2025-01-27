@@ -15,7 +15,7 @@ def test_train_model_with_optuna():
     train_model_with_optuna()
 
     # Load the saved model and verify performance
-    model_path = "modelfinal_best.joblib"
+    model_path = "best_model.joblib"
     assert os.path.exists(model_path), "Best model file was not saved!"
 
     # Load the saved model and verify
