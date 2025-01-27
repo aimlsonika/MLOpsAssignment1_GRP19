@@ -52,7 +52,7 @@ jobs:
           dvc pull data/diabetes.csv  # Fetch the data from remote mc  
 
       - name: Set PYTHONPATH
-        run: echo "PYTHONPATH=$PWD/src" >> $GITHUB_ENV
+        run: echo "PYTHONPATH=$PWD" >> $GITHUB_ENV
 
       - name: Run Tests
         run: pytest src/test_model.py
@@ -75,7 +75,7 @@ jobs:
       - name: Start MLflow Server
         run: |
           nohup mlflow server --backend-store-uri sqlite:///mlflow.db \
-          --default-artifact-root ./mlartifacts --host 0.0.0.0 --port 5000 &
+          --default-artifact-root ./mlartifacts --host 0.0.0.0 --port 8000 &
         continue-on-error: true
 
   build-and-deploy:
