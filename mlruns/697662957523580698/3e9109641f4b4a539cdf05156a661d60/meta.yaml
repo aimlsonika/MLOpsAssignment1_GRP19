@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/697662957523580698/3e9109641f4b4a539cdf05156a661d60/artifacts
+end_time: 1737984588923
+entry_point_name: ''
+experiment_id: '697662957523580698'
+lifecycle_stage: active
+run_id: 3e9109641f4b4a539cdf05156a661d60
+run_name: brawny-boar-313
+run_uuid: 3e9109641f4b4a539cdf05156a661d60
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737984543471
+status: 3
+tags: []
+user_id: ramsb

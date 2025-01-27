@@ -27,7 +27,7 @@ jobs:
 
   test:
     name: Test the Model
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
@@ -56,7 +56,7 @@ jobs:
 
       - name: Start MLflow server
         run: |
-          nohup mlflow server --backend-store-uri sqlite:///mlflow.db --default-artifact-root ./mlruns --host 0.0.0.0 --port 8000 &
+          nohup mlflow server --backend-store-uri sqlite:///mlflow.db --default-artifact-root ./mlruns --host 127.0.0.1 --port 8000 &
       - name: Run Tests
         run: pytest src/test_model.py
 

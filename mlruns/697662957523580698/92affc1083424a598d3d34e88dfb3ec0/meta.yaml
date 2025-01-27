@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/697662957523580698/92affc1083424a598d3d34e88dfb3ec0/artifacts
+end_time: 1737984524819
+entry_point_name: ''
+experiment_id: '697662957523580698'
+lifecycle_stage: active
+run_id: 92affc1083424a598d3d34e88dfb3ec0
+run_name: popular-bee-875
+run_uuid: 92affc1083424a598d3d34e88dfb3ec0
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737984493993
+status: 3
+tags: []
+user_id: ramsb
