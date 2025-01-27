@@ -9,8 +9,7 @@ import joblib
 # Suppress warnings and configure logging
 # Suppress sklearn deprecation warnings
 warnings.filterwarnings("ignore", message=".*_IS_DEPRECATED_PICKLE.*")
-logging.basicConfig(level=logging.INFO, \
-    format="%(asctime)s - %(levelname)s - %(message)s")
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 
 
 # Initialize Flask application
@@ -54,7 +53,7 @@ def diabetes_prediction():
                             'Insulin', 'BMI', 'DiabetesPedigreeFunction', 'Age']
         if not all(column in df.columns for column in required_columns):
             return jsonify({"error": "Missing required columns. \
-                            Expected: %s"},required_columns),  400
+                            Expected: %s"}, required_columns), 400
         # Convert data types to match the model's requirements
         df = df[required_columns]
         df = df.astype({
@@ -77,16 +76,16 @@ def diabetes_prediction():
         return jsonify(final_predictions), 200
     except pd.errors.EmptyDataError:
         logging.error("Received empty data.")
-        raise 
+        raise
     except FileNotFoundError as e:
         logging.error("File not found: %s", e)
-        raise    
+        raise
     except ValueError as e:
         logging.error("Value error during prediction: %s", e)
-        raise    
+        raise
     except Exception as e:  # pylint: disable=W0718
         logging.error("Unexpected error: %s", e)
-        raise   
+        raise
 
 
 if __name__ == "__main__":
