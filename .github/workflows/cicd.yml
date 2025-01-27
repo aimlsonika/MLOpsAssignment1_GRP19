@@ -37,7 +37,7 @@ jobs:
         with:
           python-version: 3.9
 
-      - name: Install Dependencies
+      - name: Install Dependencies needed
         run: pip install -r requirements.txt
 
       - name: Install pytest
