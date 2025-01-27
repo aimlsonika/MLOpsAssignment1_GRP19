@@ -69,7 +69,7 @@ def train_model_with_optuna():
     # Preprocess the data
     x_train, _, y_train, _ = preprocess_data()
 
-    mlflow.set_tracking_uri("http://127.0.0.1:8000")
+    mlflow.set_tracking_uri("http://0.0.0.0:8000")
     mlflow.set_experiment("Diabetes Prediction with Optuna")
     study = optuna.create_study(direction="maximize")
     study.optimize(objective, n_trials=3)  # Run 3 trials for demonstration

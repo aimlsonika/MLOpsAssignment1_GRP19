@@ -53,33 +53,12 @@ jobs:
 
       - name: Set PYTHONPATH
         run: echo "PYTHONPATH=$PWD" >> $GITHUB_ENV
-        
+
       - name: Start MLflow server
         run: |
           nohup mlflow server --backend-store-uri sqlite:///mlflow.db --default-artifact-root ./mlruns --host 0.0.0.0 --port 8000 &
       - name: Run Tests
         run: pytest src/test_model.py
-
-  mlflow:
-    name: Start MLflow Server
-    runs-on: windows-latest
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: 3.9
-
-      - name: Install Dependencies
-        run: pip install -r requirements.txt
-
-      - name: Start MLflow Server
-        run: |
-          nohup mlflow server --backend-store-uri sqlite:///mlflow.db \
-          --default-artifact-root ./mlartifacts --host 0.0.0.0 --port 8000 &
-        continue-on-error: true
 
   build-and-deploy:
     name: Build and Deploy Flask App
