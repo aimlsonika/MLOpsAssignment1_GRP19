@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/697662957523580698/bcdbea9f23f54fa8808d05113b2d5aeb/artifacts
+end_time: 1737978602577
+entry_point_name: ''
+experiment_id: '697662957523580698'
+lifecycle_stage: active
+run_id: bcdbea9f23f54fa8808d05113b2d5aeb
+run_name: rebellious-fowl-944
+run_uuid: bcdbea9f23f54fa8808d05113b2d5aeb
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737978545117
+status: 3
+tags: []
+user_id: ramsb

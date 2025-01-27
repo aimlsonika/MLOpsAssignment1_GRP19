@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/697662957523580698/4d526553e7934b64a5d6f8ce616a626d/artifacts
+end_time: 1737978652667
+entry_point_name: ''
+experiment_id: '697662957523580698'
+lifecycle_stage: active
+run_id: 4d526553e7934b64a5d6f8ce616a626d
+run_name: unique-smelt-776
+run_uuid: 4d526553e7934b64a5d6f8ce616a626d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737978602973
+status: 3
+tags: []
+user_id: ramsb
