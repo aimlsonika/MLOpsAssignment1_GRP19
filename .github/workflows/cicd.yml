@@ -78,4 +78,4 @@ jobs:
 
 
       - name: Run Docker Container
-        run: docker run -d -p 5001:5001 flask-ml-app
+        run: docker run -d -p 5001:5001 ${{ secrets.DOCKER_USERNAME }}/diabetes_predict:latest
