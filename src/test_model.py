@@ -5,6 +5,7 @@ import os
 import joblib
 from src.model import train_model_with_optuna, preprocess_data
 
+
 def test_train_model_with_optuna():
     """
     Tests the model training function with Optuna hyperparameter tuning.

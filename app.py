@@ -74,25 +74,19 @@ def diabetes_prediction():
             list(predictions),
             columns=["Based on your test report, the diabetes result is:"]
         ).to_dict(orient="records")
-
         return jsonify(final_predictions), 200
-
     except pd.errors.EmptyDataError:
         logging.error("Received empty data.")
-        raise
-        
+        raise 
     except FileNotFoundError as e:
         logging.error("File not found: %s", e)
-        raise
-        
+        raise    
     except ValueError as e:
         logging.error("Value error during prediction: %s", e)
-        raise
-        
+        raise    
     except Exception as e:  # pylint: disable=W0718
         logging.error("Unexpected error: %s", e)
-        raise
-        
+        raise   
 
 
 if __name__ == "__main__":
@@ -100,5 +94,5 @@ if __name__ == "__main__":
         logging.info("Starting Flask app...")
         app.run(debug=True, host="0.0.0.0", port=5001)
     except Exception as e:
-        logging.error("Failed to start Flask app: %s",e)
+        logging.error("Failed to start Flask app: %s", e)
         raise
