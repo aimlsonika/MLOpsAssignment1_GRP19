@@ -71,10 +71,11 @@ jobs:
         run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
 
       - name: Build Docker Image
-        run: docker build -t flask-ml-app .
+        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/diabetes_predict:latest .
 
       - name: Push Docker Image to DockerHub
-        run: docker push flask-ml-app
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/diabetes_predict:latest
+
 
       - name: Run Docker Container
         run: docker run -d -p 5001:5001 flask-ml-app
