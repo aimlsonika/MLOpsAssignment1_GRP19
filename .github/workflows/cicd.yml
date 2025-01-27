@@ -43,9 +43,12 @@ jobs:
       - name: Install pytest
         run: pip install pytest
 
+      - name: Set PYTHONPATH
+        run: echo "PYTHONPATH=$PWD/src" >> $GITHUB_ENV
+
       - name: Pull Dataset using DVC
         run: |
-          pip install dvc[gdrive]
+          pip install dvc[https://drive.google.com/drive/folders/1ct12OBMb1y8qA4lqlcqYzwAi8wlrXxfE?usp=drive_link]
           dvc pull
 
       - name: Run Tests
