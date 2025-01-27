@@ -1,4 +1,4 @@
 [core]
-    remote = gdrive
-['remote "gdrive"']
-    url = https://drive.google.com/drive/folders/1ct12OBMb1y8qA4lqlcqYzwAi8wlrXxfE?usp=drive_link
+    remote = local-remote
+['remote "local-remote"']
+    url = ../dvc_remote

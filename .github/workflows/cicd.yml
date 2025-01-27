@@ -46,10 +46,13 @@ jobs:
       - name: Set PYTHONPATH
         run: echo "PYTHONPATH=$PWD/src" >> $GITHUB_ENV
 
-      - name: Pull Dataset using DVC
+      - name: Install DVC
         run: |
-          pip install dvc[https://drive.google.com/drive/folders/1ct12OBMb1y8qA4lqlcqYzwAi8wlrXxfE?usp=drive_link]
-          dvc pull
+          python -m pip install dvc
+
+      - name: Pull data with DVC
+        run: |
+          dvc pull data/diabetes.csv  # Fetch the data          
 
       - name: Run Tests
         run: pytest src/test_model.py
