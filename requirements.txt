@@ -1,0 +1,8 @@
+#requirements.txt has only runtime dependencies
+scikit-learn
+pytest 
+pandas 
+optuna 
+joblib 
+mlflow 
+flask 

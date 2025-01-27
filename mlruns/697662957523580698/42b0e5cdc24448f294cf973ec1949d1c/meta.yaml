@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/697662957523580698/42b0e5cdc24448f294cf973ec1949d1c/artifacts
+end_time: 1737943993878
+entry_point_name: ''
+experiment_id: '697662957523580698'
+lifecycle_stage: active
+run_id: 42b0e5cdc24448f294cf973ec1949d1c
+run_name: nebulous-mole-81
+run_uuid: 42b0e5cdc24448f294cf973ec1949d1c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737943982854
+status: 3
+tags: []
+user_id: ramsb

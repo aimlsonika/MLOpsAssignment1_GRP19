@@ -1,0 +1,6 @@
+artifact_location: mlflow-artifacts:/697662957523580698
+creation_time: 1737942555475
+experiment_id: '697662957523580698'
+last_update_time: 1737942555475
+lifecycle_stage: active
+name: Diabetes Prediction with Optuna
